@@ -1,7 +1,7 @@
 [cml_testdevice]
-10.10.67.131
+10.10.67.132
 
-[cml_testdevice]
+[cml_testdevice:vars]
 ansible_user=cisco
 ansible_password=cisco
 ansible_become_pass=cisco

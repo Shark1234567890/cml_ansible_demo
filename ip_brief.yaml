@@ -1,0 +1,9 @@
+- name: Interface Overview
+  hosts: cml_testdevice
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: show ip int brief
+      ios_command:
+        commands: show ip int brief

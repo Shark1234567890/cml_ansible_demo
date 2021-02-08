@@ -1,5 +1,5 @@
 [cml_testdevice]
-10.10.67.132
+10.10.67.xxx
 
 [cml_testdevice:vars]
 ansible_user=cisco

@@ -4,20 +4,14 @@
   gather_facts: no
 
   tasks:
-    - name: test command
-      ios_vlans:
-        config:
-          - name: Vlan_10
-            vlan_id: 10
-            state: active
-            shutdown: disabled
-          - name: Vlan_20
-            vlan_id: 20
-            mtu: 610
-            state: active
-            shutdown: enabled
-          - name: Vlan_30
-            vlan_id: 30
-            state: suspend
-            shutdown: enabled
-        state: merged
+    - name: load new acl into device
+      ios_config:
+        lines:
+          - 10 permit ip host 192.0.2.1 any log
+          - 20 permit ip host 192.0.2.2 any log
+          - 30 permit ip host 192.0.2.3 any log
+          - 40 permit ip host 192.0.2.4 any log
+          - 50 permit ip host 192.0.2.5 any log
+        parents: ip access-list extended test
+        before: no ip access-list extended test
+        match: exact

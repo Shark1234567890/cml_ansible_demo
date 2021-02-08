@@ -1,0 +1,8 @@
+- name: Configure VLAN
+  hosts: cml_testdevice
+  connection: local
+  gather_facts: no
+
+  tasks:
+    - name: test command
+      ios_command: show ip int brief
